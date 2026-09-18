@@ -61,7 +61,7 @@
     header { padding: 84px 0 76px; }
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 300px;
+      grid-template-columns: minmax(0, 1fr) 340px;
       gap: 72px;
       align-items: start;
     }
@@ -109,10 +109,11 @@
       position: relative;
       border: 1px solid var(--line);
       background: var(--paper-2);
-      min-height: 385px;
+      aspect-ratio: 4 / 5;
+      min-height: auto;
       display: flex;
       align-items: flex-end;
-      padding: 18px;
+      padding: 0;
       overflow: hidden;
     }
     .portrait::before,
@@ -258,7 +259,7 @@
 
     @media (max-width: 860px) {
       .hero { grid-template-columns: 1fr; gap: 40px; }
-      .portrait { width: min(310px, 100%); min-height: 390px; }
+      .portrait { width: min(340px, 100%); }
       .section-grid { grid-template-columns: 1fr; gap: 22px; }
       .section-label { position: static; }
       .research-item { grid-template-columns: 48px 1fr; }
@@ -308,10 +309,8 @@
             <a href="https://ora.ox.ac.uk/objects/uuid:49ad3d79-14fc-431b-8fcc-b7f59c7d0c56" target="_blank" rel="noreferrer">PhD thesis</a>
           </div>
         </div>
-        <div class="portrait" aria-label="Portrait placeholder">
-          <!-- When your photo is ready, put photo.jpg in this folder and replace the note below with:
-               <img src="photo.jpg" alt="Portrait of Maria Nocchi"> -->
-          <div class="portrait-note">portrait to be added</div>
+        <div class="portrait" aria-label="Portrait of Maria Nocchi">
+          <img src="photo.jpg" alt="Portrait of Maria Nocchi">
         </div>
       </div>
     </header>
