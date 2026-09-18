@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Maria Nocchi — theoretical physicist at the Simons Center for Geometry and Physics." />
+  <meta name="theme-color" content="#f4f0e8" />
+  <title>Maria Nocchi | Theoretical Physics</title>
+  <style>
+    :root {
+      --paper: #f4f0e8;
+      --paper-2: #fbf9f5;
+      --ink: #1c2026;
+      --muted: #66665f;
+      --accent: #7d2f35;
+      --line: #cfc8bc;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--accent); }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin: 0 auto; }
+
+    .masthead {
+      border-bottom: 1px solid var(--line);
+      padding: 18px 0;
+    }
+    .masthead-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 30px;
+    }
+    .mark {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.16rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+    .top-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
+      font-size: .88rem;
+    }
+    .top-links a { text-decoration: none; border-bottom: 1px solid transparent; }
+    .top-links a:hover { border-color: currentColor; }
+
+    header { padding: 84px 0 76px; }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 72px;
+      align-items: start;
+    }
+    .kicker {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .72rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+    h1 {
+      font-size: clamp(3.2rem, 8vw, 6.5rem);
+      line-height: .92;
+      letter-spacing: -.045em;
+      margin: 0 0 28px;
+    }
+    .role {
+      max-width: 710px;
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin: 0 0 34px;
+    }
+    .intro {
+      max-width: 790px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.35rem, 2.5vw, 1.83rem);
+      line-height: 1.42;
+      margin: 0;
+    }
+    .quick {
+      margin-top: 35px;
+      display: flex;
+      gap: 14px 20px;
+      flex-wrap: wrap;
+      font-size: .9rem;
+    }
+    .quick a { text-decoration: none; border-bottom: 1px solid var(--ink); }
+
+    .portrait {
+      position: relative;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+      min-height: 385px;
+      display: flex;
+      align-items: flex-end;
+      padding: 18px;
+      overflow: hidden;
+    }
+    .portrait::before,
+    .portrait::after {
+      content: "";
+      position: absolute;
+      background: var(--line);
+      opacity: .65;
+    }
+    .portrait::before { width: 1px; height: 130%; transform: rotate(38deg); left: 50%; top: -15%; }
+    .portrait::after { height: 1px; width: 130%; transform: rotate(-28deg); left: -15%; top: 48%; }
+    .portrait-note {
+      position: relative;
+      z-index: 2;
+      font-size: .78rem;
+      color: var(--muted);
+      background: rgba(251,249,245,.92);
+      padding: 8px 10px;
+    }
+    .portrait img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 3;
+    }
+
+    section { border-top: 1px solid var(--line); padding: 72px 0; }
+    .section-grid {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 48px;
+      align-items: start;
+    }
+    .section-label {
+      position: sticky;
+      top: 24px;
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    h2 {
+      font-size: clamp(2.15rem, 4vw, 3.35rem);
+      line-height: 1.08;
+      letter-spacing: -.025em;
+      margin: 0 0 28px;
+    }
+    .section-lead {
+      max-width: 790px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.23rem;
+      color: #34383c;
+      margin: 0 0 38px;
+    }
+
+    .research-list { border-top: 1px solid var(--line); }
+    .research-item {
+      display: grid;
+      grid-template-columns: 70px 255px minmax(0, 1fr);
+      gap: 24px;
+      padding: 26px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    .research-num { color: var(--accent); font-size: .84rem; font-weight: 700; }
+    .research-item h3 { font-size: 1.32rem; line-height: 1.25; margin: 0; }
+    .research-item p { color: var(--muted); margin: 0; }
+
+    .positions { border-top: 1px solid var(--line); }
+    .position {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 26px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .year { color: var(--muted); font-size: .9rem; font-variant-numeric: tabular-nums; }
+    .position strong { font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: 1.14rem; }
+    .position .detail { color: var(--muted); margin-top: 3px; }
+
+    .pubs { border-top: 1px solid var(--line); counter-reset: pubs; }
+    .pub {
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr) 115px;
+      gap: 20px;
+      padding: 21px 0 23px;
+      border-bottom: 1px solid var(--line);
+      counter-increment: pubs;
+    }
+    .pub-no::before {
+      content: counter(pubs, decimal-leading-zero);
+      color: var(--accent);
+      font-size: .82rem;
+      font-weight: 700;
+    }
+    .pub-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.12rem;
+      line-height: 1.35;
+    }
+    .pub-title a { text-decoration: none; }
+    .pub-title a:hover { text-decoration: underline; }
+    .pub-meta { color: var(--muted); font-size: .88rem; margin-top: 5px; }
+    .pub-year { text-align: right; color: var(--muted); font-size: .86rem; }
+    .more-link { margin-top: 25px; font-size: .93rem; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 54px;
+    }
+    .subhead {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      margin: 0 0 17px;
+    }
+    .clean-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+    .clean-list li { padding: 15px 0; border-bottom: 1px solid var(--line); }
+    .clean-list .meta { display: block; color: var(--muted); font-size: .87rem; margin-top: 4px; }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 70px;
+      align-items: end;
+    }
+    .contact-big {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.7rem, 3.6vw, 3rem);
+      line-height: 1.25;
+      margin: 0;
+    }
+    .contact-small { color: var(--muted); font-size: .92rem; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 23px 0 38px;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; gap: 40px; }
+      .portrait { width: min(310px, 100%); min-height: 390px; }
+      .section-grid { grid-template-columns: 1fr; gap: 22px; }
+      .section-label { position: static; }
+      .research-item { grid-template-columns: 48px 1fr; }
+      .research-item p { grid-column: 2; }
+      .pub { grid-template-columns: 42px 1fr; }
+      .pub-year { grid-column: 2; text-align: left; }
+      .two-col, .contact { grid-template-columns: 1fr; gap: 42px; }
+    }
+
+    @media (max-width: 580px) {
+      .wrap { width: min(var(--max), calc(100% - 28px)); }
+      .masthead-inner { grid-template-columns: 1fr; gap: 12px; }
+      .top-links { justify-content: flex-start; gap: 12px 15px; }
+      header { padding: 58px 0 55px; }
+      section { padding: 55px 0; }
+      .position { grid-template-columns: 1fr; gap: 4px; }
+      .research-item { grid-template-columns: 38px 1fr; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="masthead">
+    <div class="wrap masthead-inner">
+      <div class="mark">Maria Nocchi</div>
+      <nav class="top-links" aria-label="Primary navigation">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#background">Background</a>
+        <a href="#talks">Talks</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <header>
+      <div class="wrap hero">
+        <div>
+          <div class="kicker">Theoretical physics</div>
+          <h1>Maria<br>Nocchi</h1>
+          <p class="role">Research Assistant Professor · Simons Center for Geometry and Physics · Stony Brook University</p>
+          <p class="intro">I work on quantum field theory and string theory in curved spacetimes, with a focus on holography, conformal field theory, and scattering amplitudes in anti-de Sitter space.</p>
+          <div class="quick" aria-label="External links">
+            <a href="mailto:maria.nocchi@scgp.stonybrook.edu">Email</a>
+            <a href="https://inspirehep.net/authors/2676649" target="_blank" rel="noreferrer">INSPIRE</a>
+            <a href="https://orcid.org/0009-0007-4334-2421" target="_blank" rel="noreferrer">ORCID</a>
+            <a href="https://ora.ox.ac.uk/objects/uuid:49ad3d79-14fc-431b-8fcc-b7f59c7d0c56" target="_blank" rel="noreferrer">PhD thesis</a>
+          </div>
+        </div>
+        <div class="portrait" aria-label="Portrait placeholder">
+          <!-- When your photo is ready, put photo.jpg in this folder and replace the note below with:
+               <img src="photo.jpg" alt="Portrait of Maria Nocchi"> -->
+          <div class="portrait-note">portrait to be added</div>
+        </div>
+      </div>
+    </header>
+
+    <section id="research">
+      <div class="wrap section-grid">
+        <div class="section-label">01 · Research</div>
+        <div>
+          <h2>Physics in AdS, from fields to strings.</h2>
+          <p class="section-lead">A recurring theme in my work is to use anti-de Sitter space as a controlled setting in which analytic structure, symmetry, and dynamics can be studied together — and then related back to flat-space scattering.</p>
+
+          <div class="research-list">
+            <article class="research-item">
+              <div class="research-num">01</div>
+              <h3>Gauge dynamics in AdS</h3>
+              <p>I am currently studying perturbative gauge theory on fixed AdS backgrounds, with boundary CFT observables as probes of weak- and strong-coupling dynamics. This includes boundary correlators, AdS unitarity, and the emergence of flat-space scattering in the large-radius limit.</p>
+            </article>
+            <article class="research-item">
+              <div class="research-num">02</div>
+              <h3>String amplitudes & exact structures</h3>
+              <p>I study string amplitudes in AdS and the structures that organize them: high-energy and Regge limits, KLT and monodromy relations, factorization, and worldsheet-inspired descriptions of holographic observables.</p>
+            </article>
+            <article class="research-item">
+              <div class="research-num">03</div>
+              <h3>Conformal field theory</h3>
+              <p>My work also uses analytic and numerical bootstrap methods, lightcone expansions, chiral algebra, and defect/boundary CFT techniques to extract and organize dynamical information in conformal theories.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="wrap section-grid">
+        <div class="section-label">02 · Publications</div>
+        <div>
+          <h2>Publications & preprints</h2>
+          <p class="section-lead">A selection of recent work. The complete and automatically updated record is available on INSPIRE.</p>
+
+          <div class="pubs">
+            <article class="pub">
+              <div class="pub-no"></div>
+              <div>
+                <div class="pub-title"><a href="https://arxiv.org/abs/2606.09769" target="_blank" rel="noreferrer">All-multiplicity monodromy and KLT relations for AdS string integrals</a></div>
+                <div class="pub-meta">M. Nocchi, R. Schmidt Pitombo, A. Strömholm Sangaré, Y.-X. Tao · arXiv:2606.09769</div>
+              </div>
+              <div class="pub-year">2026</div>
+            </article>
+            <article class="pub">
+              <div class="pub-no"></div>
+              <div>
+                <div class="pub-title"><a href="https://arxiv.org/abs/2504.19973" target="_blank" rel="noreferrer">Stringy KLT Relations on AdS</a></div>
+                <div class="pub-meta">L. F. Alday, M. Nocchi, A. S. Sangaré · JHEP 02 (2026) 124</div>
+              </div>
+              <div class="pub-year">2026</div>
+            </article>
+            <article class="pub">
+              <div class="pub-no"></div>
+              <div>
+                <div class="pub-title"><a href="https://arxiv.org/abs/2502.10269" target="_blank" rel="noreferrer">Dissecting supergraviton six-point function with lightcone limits and chiral algebra</a></div>
+                <div class="pub-meta">V. Gonçalves, M. Nocchi, X. Zhou · JHEP 06 (2025) 173</div>
+              </div>
+              <div class="pub-year">2025</div>
+            </article>
+            <article class="pub">
+              <div class="pub-no"></div>
+              <div>
+                <div class="pub-title"><a href="https://arxiv.org/abs/2409.03695" target="_blank" rel="noreferrer">On the Regge behaviour of the AdS Virasoro-Shapiro Amplitude</a></div>
+                <div class="pub-meta">L. F. Alday, M. Nocchi, C. Virally, X. Zhou · JHEP 04 (2025) 064</div>
+              </div>
+              <div class="pub-year">2025</div>
+            </article>
+            <article class="pub">
+              <div class="pub-no"></div>
+              <div>
+                <div class="pub-title"><a href="https://arxiv.org/abs/2406.19343" target="_blank" rel="noreferrer">Carrollian Amplitudes from Holographic Correlators</a></div>
+                <div class="pub-meta">L. F. Alday, M. Nocchi, R. Ruzziconi, A. Yelleshpur Srikant · JHEP 03 (2025) 158</div>
+              </div>
+              <div class="pub-year">2025</div>
+            </article>
+            <article class="pub">
+              <div class="pub-no"></div>
+              <div>
+                <div class="pub-title"><a href="https://arxiv.org/abs/2405.08072" target="_blank" rel="noreferrer">Random Bond perturbations of the O(2) vector model</a></div>
+                <div class="pub-meta">M. Nocchi · arXiv:2405.08072</div>
+              </div>
+              <div class="pub-year">2024</div>
+            </article>
+            <article class="pub">
+              <div class="pub-no"></div>
+              <div>
+                <div class="pub-title"><a href="https://arxiv.org/abs/2312.02261" target="_blank" rel="noreferrer">High Energy String Scattering in AdS</a></div>
+                <div class="pub-meta">L. F. Alday, T. Hansen, M. Nocchi · JHEP 02 (2024) 089</div>
+              </div>
+              <div class="pub-year">2024</div>
+            </article>
+            <article class="pub">
+              <div class="pub-no"></div>
+              <div>
+                <div class="pub-title"><a href="https://arxiv.org/abs/2311.02742" target="_blank" rel="noreferrer">Analytic and numerical bootstrap for the long-range Ising model</a></div>
+                <div class="pub-meta">C. Behan, E. Lauria, M. Nocchi, P. van Vliet · JHEP 03 (2024) 136</div>
+              </div>
+              <div class="pub-year">2024</div>
+            </article>
+            <article class="pub">
+              <div class="pub-no"></div>
+              <div>
+                <div class="pub-title"><a href="https://arxiv.org/abs/2307.06884" target="_blank" rel="noreferrer">Six-point AdS gluon amplitudes from flat space and factorization</a></div>
+                <div class="pub-meta">L. F. Alday, V. Gonçalves, M. Nocchi, X. Zhou · Phys. Rev. Research 6 (2024) L012041</div>
+              </div>
+              <div class="pub-year">2024</div>
+            </article>
+          </div>
+          <p class="more-link"><a href="https://inspirehep.net/authors/2676649" target="_blank" rel="noreferrer">Complete publication list on INSPIRE →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="background">
+      <div class="wrap section-grid">
+        <div class="section-label">03 · Background</div>
+        <div>
+          <h2>Academic background</h2>
+          <div class="positions">
+            <div class="position">
+              <div class="year">2025–present</div>
+              <div><strong>Research Assistant Professor</strong><div class="detail">Simons Center for Geometry and Physics, Stony Brook University</div></div>
+            </div>
+            <div class="position">
+              <div class="year">2021–2025</div>
+              <div><strong>DPhil in Mathematics, University of Oxford</strong><div class="detail">Supervisor: Luis Fernando Alday · Thesis: <em>String Amplitudes in AdS and Their Limits</em></div></div>
+            </div>
+            <div class="position">
+              <div class="year">2018–2020</div>
+              <div><strong>Laurea Magistrale in Physics, University of Pisa</strong><div class="detail">Supervisor: Alessandro Vichi · 110/110 cum laude</div></div>
+            </div>
+            <div class="position">
+              <div class="year">2015–2018</div>
+              <div><strong>Laurea Triennale in Physics, University of Calabria</strong><div class="detail">Supervisor: Alessandro Papa · 110/110 cum laude</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="talks">
+      <div class="wrap section-grid">
+        <div class="section-label">04 · Talks</div>
+        <div>
+          <h2>Selected talks & recognition</h2>
+          <div class="two-col">
+            <div>
+              <h3 class="subhead">Invited talks</h3>
+              <ul class="clean-list">
+                <li><strong>Caltech</strong><span class="meta">Invited seminar · February 2027</span></li>
+                <li><strong>Yale University</strong><span class="meta">Invited seminar · October 2026</span></li>
+                <li><strong>Simons Collaboration on Celestial Holography Satellite Meeting</strong><span class="meta"><em>Towards a double-copy picture in AdS</em> · April 2026</span></li>
+                <li><strong>Celestial Holography Workshop, Harvard University</strong><span class="meta"><em>Towards a double-copy picture in AdS</em> · February 2026</span></li>
+                <li><strong>Perimeter Institute for Theoretical Physics</strong><span class="meta"><em>Towards a double-copy picture in AdS</em> · February 2026</span></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="subhead">Recognition</h3>
+              <ul class="clean-list">
+                <li><strong>GATIS+ Best Talk Prize</strong><span class="meta">Integrability in Gauge and String Theory · King's College London · 2025</span></li>
+                <li><strong>Mathematical Institute Scholarship</strong><span class="meta">University of Oxford · 2021–2025</span></li>
+                <li><strong>Best Graduating Students Award</strong><span class="meta">University of Pisa · 2020</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap section-grid">
+        <div class="section-label">05 · Contact</div>
+        <div class="contact">
+          <p class="contact-big">Simons Center for Geometry and Physics<br>Stony Brook University</p>
+          <div class="contact-small">
+            <strong>Maria Nocchi</strong><br>
+            Office 502<br>
+            Stony Brook, NY 11794-3636<br>
+            USA<br><br>
+            <a href="mailto:maria.nocchi@scgp.stonybrook.edu">maria.nocchi@scgp.stonybrook.edu</a><br>
+            <a href="https://orcid.org/0009-0007-4334-2421" target="_blank" rel="noreferrer">ORCID 0009-0007-4334-2421</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Maria Nocchi · Last updated September 2026</div>
+  </footer>
+</body>
+</html>
